@@ -254,7 +254,7 @@ if ( ! function_exists( 'kleo_title_section' ) ) {
 			'show_title'      => true,
 			'show_breadcrumb' => true,
 			'link'            => '',
-			'output'          => "<section class='{class} border-bottom breadcrumbs-container'><div class='container'>{title_data}<div class='breadcrumb-extra'>{breadcrumb_data}{extra}</div></div></section>",
+			'output'          => "<section class='{class} border-bottom breadcrumbs-container'><div class='container'><div class='breadcrumb-extra'>{breadcrumb_data}{extra}</div></div></section>",
 			'class'           => 'container-wrap main-title alternate-color ',
 			'extra'           => '<p class="page-info">' . do_shortcode( sq_option( 'title_info', '' ) ) . '</p>',
 			'heading'         => 'h1'
