@@ -206,6 +206,10 @@ body {
                             color:$color_hdr-nav-active;
                         }
                     }
+
+                    > span.caret:hover:after {
+                        color:$color_hdr-nav-active;
+                    }
                 }
 
                 &.active {
