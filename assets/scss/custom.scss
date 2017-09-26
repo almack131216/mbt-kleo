@@ -107,7 +107,9 @@ body {
 
 
 /* The Grid */
-
+.pracia .tg-item-media-holder {
+    background:#eee url(../../wp-content/uploads/default-image/default-image-150x150.png) no-repeat 50% 50%;   
+}
 /* .tg-filters-holder */
 .tg-filters-holder {
 	.tg-filter.tg-nav-font {
@@ -165,6 +167,10 @@ body {
     &:hover,
     &:active {
         color:$color_hdr-nav-hover;
+
+        > span {
+            color:$color_hdr-nav-hover;
+        }
     }
 }
 /* (END) .tg-filters-holder */
