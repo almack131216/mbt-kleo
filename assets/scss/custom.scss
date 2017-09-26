@@ -19,6 +19,7 @@ $offset-g2:30px;
 
 $color_bg-body: #fff;
 $color_bg-content: #fff;
+$color_bg-breadcrumb: #f7f7f7;
 $color_hdr-nav:#999;
 $color_hdr-nav-hover:#000;
 $color_hdr-nav-active:#000;
@@ -58,6 +59,10 @@ body {
 		
 		section.container-wrap {
 			background:$color_bg-content;
+			
+			&.breadcrumbs-container {
+			    background:$color_bg-breadcrumb;	
+			}
 		}
 	}
 	
@@ -194,6 +199,7 @@ body {
 .navbar {
     .kleo-main-header {
 		.container .navbar-collapse.in {
+            padding-bottom:20px;
 			-webkit-box-shadow: 0px 2px 0px 0px rgba(0,0,0,1.0);
             -moz-box-shadow: 0px 2px 0px 0px rgba(0,0,0,1.0);
             box-shadow: 0px 2px 0px 0px rgba(0,0,0,1.0);
