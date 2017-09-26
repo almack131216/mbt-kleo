@@ -17,13 +17,13 @@ $offset-g1:15px;
 $offset-2:20px;
 $offset-g2:30px;
 
-$color_bg-body: #ffffff;
-$color_bg-content: #ffffff;
-$color_hdr-nav:#999999;
-$color_hdr-nav-hover:#000000;
-$color_hdr-nav-active:#000000;
-$color_button-text: #dddddd;
-$color_button-border: #dddddd;
+$color_bg-body: #fff;
+$color_bg-content: #fff;
+$color_hdr-nav:#999;
+$color_hdr-nav-hover:#000;
+$color_hdr-nav-active:#000;
+$color_button-text: #999;
+$color_button-border: #ddd;
 $color_button-border-hover: #000;
 $font-size_button:12px;
 $font-size_button-line-height:12px;
@@ -71,11 +71,20 @@ body {
 }
 
 .g_btn-base {
-	font-size:$font-size_button;
-	padding: $offset-1 $offset-g1;
+	font-size:$font-size_button;	
 	text-transform:uppercase;
 	line-height:$font-size_button;
 	color:$color_button-text;
+    font-weight:bold;
+    padding: $offset-1 $offset-g1;
+
+    > span {
+       font-size:$font-size_button;	
+        text-transform:uppercase;
+        line-height:$font-size_button;
+        color:$color_button-text;
+        font-weight:bold;
+    }
 }
 
 .g_btn-base-border {
