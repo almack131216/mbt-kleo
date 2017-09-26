@@ -28,6 +28,28 @@ $color_button-border-hover: #000;
 $font-size_button:12px;
 $font-size_button-line-height:12px;
 
+/* Mixins */
+@mixin box-shadow($inset:true) {
+  @if $inset {
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+  } @else {
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    transition:none;
+  }
+}
+
+@mixin navbar-dd-box-shadow(){
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+/* (END) Mixins */
+
 body {
 	background:$color_bg-body;
 
@@ -121,15 +143,21 @@ body {
 			line-height:inherit;
 			padding:0;
 		}
-
 		
 	}
 }
 .no-touch .tg-dropdown-item,
-		.tg-dropdown-item,
-		.tg-dropdown-item.tg-filter.tg-show-filter {
-			@extend .g_btn-base;
-		}
+.tg-dropdown-item,
+.tg-dropdown-item.tg-filter.tg-show-filter {
+    @extend .g_btn-base;
+    color:$color_hdr-nav;
+    background:white;
+
+    &:hover,
+    &:active {
+        color:$color_hdr-nav-hover;
+    }
+}
 /* (END) .tg-filters-holder */
 
 .tg-ajax-button {
@@ -150,6 +178,10 @@ body {
 
 .navbar {
     .kleo-main-header {
+		.container {
+			@include box-shadow(true);
+		}
+		
         .nav > li {        
             &.active > a {
                 box-shadow: none;
@@ -179,6 +211,20 @@ body {
                 &.active {
                     > a {
                         color:$color_hdr-nav-active;
+
+                        @media only screen and (min-width : 992px) {
+                            &:before {
+                                transition: all 0.5s ease;
+                                content: "";
+                                position: absolute;
+                                width: 60%;
+                                height: 1px;
+                                bottom:25px;
+                                left: 20%;
+                                border-bottom: 2px solid black;
+                            }
+                        }
+
                     }        
                 }
             }
@@ -207,60 +253,7 @@ h4 {
 /* (END) The Grid */
 @media only screen and (min-width : 992px) {
 
-    .kleo-main-header {
-        .nav > li {        
-            &.active > a {
-                box-shadow: none;
-            }
-        }
-
-        ul.navbar-nav {
-            /* underline on header nav active */
-
-            > li {
-                > a {
-                    color:$color_hdr-nav;
-                    
-                    > span.caret:before {
-                        color:$color_hdr-nav;
-                    }
-
-                    &:hover {
-                        color:$color_hdr-nav-active;
-
-                         span.caret:before {
-                            color:$color_hdr-nav-active;
-                        }
-                    }
-                }
-
-                &.active {
-                    > a {
-                        color:$color_hdr-nav-active;
-
-                        &:before {
-                            transition: all 0.5s ease;
-                            content: "";
-                            position: absolute;
-                            width: 60%;
-                            height: 1px;
-                            bottom:25px;
-                            left: 20%;
-                            border-bottom: 2px solid black;
-                        }
-                    }        
-                }
-            }
-            /* (END) li */        
-
-            .is-sticky .kleo-main-header .navbar-nav > li.active > a:before{
-                bottom: 0px;
-                width:100%;
-                left:0;
-            }
-        }
-        /* (END) .kleo-main-header ul.navbar-nav */
-    }
+    
 }
 
 
