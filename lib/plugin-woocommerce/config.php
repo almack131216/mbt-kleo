@@ -1046,7 +1046,7 @@ if ( ! function_exists( 'kleo_woo_get_mini_cart' ) ) {
 				$cart_output .= "<span class='kleo-notifications new-alert'>" . $cart_count . "</span>";
 			}
 			
-			$cart_output .= '</span> <span class="caret"></span>'
+			$cart_output .= '</span> <i class="fa fa-angle-down"></i>'
 			                . '</a>'
 			                . '<ul class="kleo-toggle-submenu">';
 		}

@@ -901,7 +901,7 @@ if ( ! function_exists( 'kleo_wpml_wp_nav_menu_items_filter' ) && function_exist
 	function kleo_wpml_wp_nav_menu_items_filter( $items, $args ) {
 		if ( $args->theme_location == 'primary' ) {
 			$items = str_replace( '<a href="#" onclick="return false">', '<a href="#" class="js-activated">', $items );
-			$items = str_replace( '</a><ul class="sub-menu submenu-languages">', '<span class="caret"></span></a><ul class="sub-menu submenu-languages dropdown-menu pull-left">', $items );
+			$items = str_replace( '</a><ul class="sub-menu submenu-languages">', '<i class="fa fa-angle-down"></i></a><ul class="sub-menu submenu-languages dropdown-menu pull-left">', $items );
 		}
 
 		return $items;
@@ -965,7 +965,7 @@ function kleo_get_languages() {
 				if ( ! $lang['active'] ) {
 					$items .= '<a href="' . $lang['url'] . '">' . $entry . '</a>';
 				} else {
-					$active = '<a href="' . $lang['url'] . '" class="dropdown-toggle js-activated current-language" data-toggle="dropdown">' . $entry . ( count( $languages ) > 1 ? ' <span class="caret"></span>' : '' ) . '</a>';
+					$active = '<a href="' . $lang['url'] . '" class="dropdown-toggle js-activated current-language" data-toggle="dropdown">' . $entry . ( count( $languages ) > 1 ? ' <i class="fa fa-angle-down"></i>' : '' ) . '</a>';
 				}
 
 				$items .= '</li>';

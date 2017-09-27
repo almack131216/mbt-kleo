@@ -82,7 +82,7 @@ if ( ! function_exists( 'kleo_menu_user_avatar' ) ) {
             $output .= '<a title="' . bp_get_loggedin_user_fullname() . '" class="kleo-bp-user-avatar' . ( $args->has_children && in_array($depth, array(0,1)) ? ' js-activated' : '' ) . '" href="' . $url . '" title="' . $attr_title .'">'
                 .  '<img src="' . esc_attr( bp_get_loggedin_user_avatar(array('width' => 25, 'height' => 25, 'html' => false)) ) . '" class="kleo-rounded" alt="">' . ($item->attr_title != '' ? ' ' . $item->attr_title : '');
 
-            $output .= ( $args->has_children && in_array($depth, array(0,1))) ? ' <span class="caret"></span></a>' : '</a>';
+            $output .= ( $args->has_children && in_array($depth, array(0,1))) ? ' <i class="fa fa-angle-down"></i></a>' : '</a>';
 
             return $output;
         } elseif ( $args->has_children && in_array( $depth, array( 0, 1 ) ) ) {

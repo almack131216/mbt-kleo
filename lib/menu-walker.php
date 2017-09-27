@@ -160,7 +160,7 @@ if ( ! class_exists( 'kleo_walker_nav_menu' ) ) {
 
 				$item_output .= $args->link_before . apply_filters( 'the_title', $title, $item->ID ) . $args->link_after;
 
-				$item_output .= ( $args->has_children && in_array($depth, array(0,1))) ? ' <span class="caret"></span></a>' : '</a>';
+				$item_output .= ( $args->has_children && in_array($depth, array(0,1))) ? ' <i class="fa fa-angle-down"></i></a>' : '</a>';
 				$item_output .= $args->after;
 
 				//custom filters
