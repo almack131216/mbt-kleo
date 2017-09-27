@@ -489,7 +489,7 @@ if ( sq_option( 'header_custom_search', 0 ) == 1 && sq_option( 'header_search_fo
 	if ( ! function_exists( 'kleo_get_search_menu_item' ) ) {
 		function kleo_get_search_menu_item() {
 			$output = '';
-			$output .= '<a class="search-trigger" href="#"><i class="icon icon-search"></i></a>';
+			$output .= '<a class="search-trigger" href="#"><i class="fa fa-search"></i></a>';
 			$output .= '<div class="kleo-search-wrap searchHidden" id="ajax_search_container">';
 			$output .= '<div class="gse-loading"></div>';
 			$output .= sq_option( 'header_search_form', '' );
@@ -539,7 +539,7 @@ if ( ! function_exists( 'kleo_get_search_menu_item' ) ) {
 
 		ob_start();
 		?>
-		<a class="search-trigger" href="#"><i class="icon icon-search"></i></a>
+		<a class="search-trigger" href="#"><i class="fa fa-search"></i></a>
 		<div class="kleo-search-wrap searchHidden" id="ajax_search_container">
 			<form class="form-inline" id="ajax_searchform" action="<?php echo $action; ?>"
 			      data-context="<?php echo $context; ?>">
